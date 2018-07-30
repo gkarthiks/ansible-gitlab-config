@@ -1,0 +1,89 @@
+---
+
+gitlab_config_dest: /etc/gitlab
+
+# Run gitlab-ctl reconfigure if config has changed
+gitlab_config_reconfigure: true
+
+# Take nightly backup of gitlab application and metadata
+gitlab_config_auto_nightly_backup: true
+
+# gitlab_config_backup_config_data_path: /var/opt/gitlab/config-backups
+
+# Required
+gitlab_config_external_url: http://example.com
+
+# Optional - Following are NOT default values, are only examples
+
+# gitlab_config_timezone: GMT
+
+# gitlab_config_email_from: xyz@example.com
+
+# gitlab_config_email_reply_to: xyz@example.com
+
+# gitlab_config_usage_ping: true
+
+# gitlab_config_ldap_enabled: true
+# gitlab_config_ldap_label: LDAP
+# gitlab_config_ldap_host: _your_ldap_server
+# gitlab_config_ldap_port: 389
+# gitlab_config_ldap_uid: samAccountName
+# gitlab_config_ldap_bind_dn: _the_full_dn_of_the_user_you_will_bind_with
+# gitlab_config_ldap_password: _the_password_of_the_bind_user
+# gitlab_config_ldap_encryption: plain # "tls" or "ssl" or "plain"
+# gitlab_config_ldap_verify_certificates: true
+# gitlab_config_ldap_ca_file: '' # eg '/etc/ca.pem' if using internal CA
+# gitlab_config_ldap_ssl_version: '' # eg "TLSv1_1", if the OpenSSL default is not appropriate
+# gitlab_config_ldap_timeout: 10 # timeout for LDAP queries, in seconds
+# gitlab_config_ldap_active_directory: true
+# gitlab_config_allow_username_or_email_login: false
+# gitlab_config_ldap_block_auto_created_users: false
+# gitlab_config_ldap_base: ''
+# gitlab_config_ldap_user_filter: ''
+
+# gitlab_config_manage_backup_path: true
+# gitlab_config_backup_path: /var/opt/gitlab/backups
+
+# gitlab_config_backup_archive_permissions: '0644'
+
+# gitlab_config_backup_keep_time: 604800
+
+# gitlab_config_backup_upload_nfs: true
+# gitlab_config_backup_upload_connection_provider: Local
+# gitlab_config_backup_upload_connection_local_root: /mnt/backups
+# gitlab_config_backup_upload_remote_directory: gitlab_backups
+
+# gitlab_config_smtp_enabled: true
+# gitlab_config_smtp_address: example.com
+# gitlab_config_smtp_port: 25
+
+# gitlab_config_registry_enabled: true
+# gitlab_config_registry_external_url: https://registry.gitlab.example.com:5005
+# gitlab_config_registry_path: /var/opt/gitlab/gitlab-rails/shared/registry
+
+# gitlab_config_postgresql_shared_buffers: 256MB
+
+# gitlab_config_postgresql_log_directory: /var/lib/gitlab_postgresql
+
+# gitlab_config_prometheus_enable: true
+# gitlab_config_prometheus_node_exporter_enable: true
+
+# To enable HTTPS, change the gitlab_config_external_url to https://example.com
+# gitlab_config_enable_https: true
+# gitlab_config_src_pki_dir: ~/pki
+# gitlab_config_dest_pki_dir: /etc/gitlab/ssl
+# gitlab_config_pki_key_suffix: '.key'
+# gitlab_config_pki_cert_suffix: '.crt'
+# gitlab_config_nginx_redirect_to_https: true
+#
+# For all other settings listed on - https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-config-template/gitlab.rb.template ,
+# use following map to add custom settings
+# gitlab_config_custom: |+
+#   sidekiq['log_directory'] = "/var/log/gitlab/sidekiq"
+#   redis['enable'] = true
+#   nginx['ssl_verify_client'] = "off"
+
+# gitlab_config_proxy_enabled: true
+# gitlab_config_proxy_http: http://httpproxy.com:8080
+# gitlab_config_proxy_https: https://httpsproxy.com:8080
+# gitlab_config_proxy_noproxy: localhost,127.0.0.1
